@@ -25,7 +25,7 @@ class StudentIntegrationTest {
               "fullName":"Ivan",
               "email":"ivan@test.com",
               "groupName":"IT-21",
-              "averageGrade":90
+              "averageGrade":4.5
             }
         """;
 
@@ -34,4 +34,5 @@ class StudentIntegrationTest {
                         .content(json))
                 .andExpect(status().isOk());
     }
+
 }
