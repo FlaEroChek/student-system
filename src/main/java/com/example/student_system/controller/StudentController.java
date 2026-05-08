@@ -1,6 +1,7 @@
 package com.example.student_system.controller;
 
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import com.example.student_system.model.Student;
 import com.example.student_system.model.StudentStatus;
@@ -18,7 +19,7 @@ public class StudentController {
     private final StudentService service;
 
     @PostMapping
-    public Student create(@RequestBody Student student) {
+    public Student create(@RequestBody @Valid Student student) {
         return service.create(student);
     }
 
@@ -34,5 +35,7 @@ public class StudentController {
     public void delete(@PathVariable UUID id){
         service.softDelete(id);
     }
+
+
 
 }
